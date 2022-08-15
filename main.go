@@ -6,9 +6,11 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/xvbnm48/go-session-jwt/controllers/authcontroller"
+	"github.com/xvbnm48/go-session-jwt/models"
 )
 
 func main() {
+	models.ConnectDatabase()
 	r := mux.NewRouter()
 
 	r.HandleFunc("/login", authcontroller.Login).Methods("POST")
